@@ -31,7 +31,7 @@ export default class Product {
     }
 
     displayDetails(): string {
-        return `Title: ${this.title}, Price: $${this.price}, Rating: ${this.rating}, Stock: ${this.stock}`
+        return `Title: ${this.title}, Price: $${this.price}, Category: ${this.category}`
     }
 
     getPriceWithDiscount(): number {

@@ -4,8 +4,6 @@ export default class Product {
     category: string
     price: number
     discountPercentage: number
-    rating: number
-    stock: number
     tax: number
     static defaultTax: number = 0.0475
     static gorceryTax: number = 0.03
@@ -16,8 +14,6 @@ export default class Product {
         category: string,
         price: number,
         discountPercentage: number,
-        rating: number,
-        stock: number,
         tax: number
     ) {
         this.id = id
@@ -25,8 +21,6 @@ export default class Product {
         this.category = category
         this.price = price
         this.discountPercentage = discountPercentage
-        this.rating = rating
-        this.stock = stock
         this.tax = tax
         if (category === 'groceries') {
             this.tax = Product.gorceryTax

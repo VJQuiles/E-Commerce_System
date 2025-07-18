@@ -1,4 +1,4 @@
-export class Product {
+export default class Product {
     id: number
     title: string
     category: string
@@ -45,6 +45,6 @@ export class Product {
     }
 }
 
-const product1 = new Product(1, 'title', 'category', 2, 3, 4, 5, 6)
-console.log(product1.displayDetails())
-console.log(product1.getPriceWithDiscount())
+// const product1 = new Product(1, 'title', 'category', 2, 3, 4, 5, 6)
+// console.log(product1.displayDetails())
+// console.log(product1.getPriceWithDiscount())

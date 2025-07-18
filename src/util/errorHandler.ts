@@ -19,7 +19,7 @@ export function validateNetwork(response: Response) {
 }
 
 export function ValidateData(data: any) {
-    if (typeof data !== 'object') {
+    if (typeof data !== 'object' || data !== null) {
         throw new DataError('Error validating data, please try again')
     }
 }

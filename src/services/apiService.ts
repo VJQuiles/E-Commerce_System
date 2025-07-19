@@ -18,4 +18,4 @@ export async function fetchProductData(): Promise<Product[]> {
     }
 }
 
-fetchProductData().then(data => console.log(data))
+//fetchProductData().then(data => console.log(data))

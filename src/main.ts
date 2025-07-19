@@ -19,9 +19,52 @@ async function doTheThings() {
     )
 
     productList.forEach(
-        (product) =>
-            product.displayDetails()
+        (product) => {
+            product.displayDetails(),
+                product.getPriceWithDiscount()
+        }
     )
+
+    productList.forEach(
+        (product => {
+            const discountGiven = calculateTax(product)
+            // return discountGiven
+            console.log(discountGiven)
+        }
+        )
+    )
+
+    productList.forEach(
+        (product => {
+            const taxApplied = calculateDiscount(product)
+            return taxApplied
+            //console.log(taxApplied, product.price + taxApplied)
+        }
+        )
+    )
+
+    return productList
 }
 
-doTheThings().then((result) => console.log(result))
+
+async function mainCourse() {
+    try {
+        await doTheThings()
+    }
+    catch (error) {
+        if (error instanceof NetworkError) {
+            // throw error
+            console.error("Network Error:", error.message)
+        }
+        else if (error instanceof DataError) {
+            // throw error
+            console.error("Network Error:", error.message)
+        }
+        else {
+            //throw new Error("Well I uh, I didn't see this coming.")
+            console.error("Well I uh, I didn't see this coming.", error)
+        }
+    }
+}
+
+mainCourse()

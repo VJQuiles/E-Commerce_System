@@ -3,7 +3,7 @@ import { NetworkError, DataError } from "../util/errorHandler"
 
 export async function fetchProductData(): Promise<Product[]> {
     try {
-        const response = await fetch('https://frzdummyjson.com/products?limit=25&select=id,title,category,price,discountPercentage')
+        const response = await fetch('https://dummyjson.com/products?limit=25&select=id,title,category,price,discountPercentage')
         if (!response.ok) {
             throw new NetworkError("Error connecting to network.")
         }
@@ -17,7 +17,7 @@ export async function fetchProductData(): Promise<Product[]> {
         if (error instanceof NetworkError || error instanceof DataError) {
             throw error
         }
-        throw new NetworkError(error instanceof Error ? error.message : String(error))
+        throw new Error('Houston we have a problem. I dont think this guys knows what he is doing')
     }
 }
 

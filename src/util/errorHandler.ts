@@ -18,7 +18,7 @@ export function validateNetwork(response: Response) {
     }
 }
 
-export function ValidateData(data: any) {
+export function validateData(data: any) {
     if (typeof data !== 'object' || data === null) {
         throw new DataError('Error validating data, please try again')
     }

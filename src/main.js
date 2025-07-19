@@ -53,18 +53,20 @@ function doTheThings() {
                         return new Product_1.default(products.id, products.title, products.category, products.price, products.discountPercentage, products.tax);
                     });
                     productList.forEach(function (product) {
-                        product.displayDetails(),
-                            product.getPriceWithDiscount();
+                        return console.log(product.displayDetails());
+                    });
+                    productList.forEach(function (product) {
+                        return console.log(product.getPriceWithDiscount());
                     });
                     productList.forEach((function (product) {
                         var discountGiven = (0, taxCalculator_1.calculateTax)(product);
-                        // return discountGiven
+                        //return discountGiven
                         console.log(discountGiven);
                     }));
                     productList.forEach((function (product) {
                         var taxApplied = (0, discountCalculator_1.calculateDiscount)(product);
-                        return taxApplied;
-                        //console.log(taxApplied, product.price + taxApplied)
+                        //return taxApplied
+                        console.log(taxApplied, product.price + taxApplied);
                     }));
                     return [2 /*return*/, productList];
             }

@@ -19,16 +19,19 @@ async function doTheThings() {
     )
 
     productList.forEach(
-        (product) => {
-            product.displayDetails(),
-                product.getPriceWithDiscount()
-        }
+        (product) =>
+            console.log(product.displayDetails())
+    )
+
+    productList.forEach(
+        (product) =>
+            console.log(product.getPriceWithDiscount())
     )
 
     productList.forEach(
         (product => {
             const discountGiven = calculateTax(product)
-            // return discountGiven
+            //return discountGiven
             console.log(discountGiven)
         }
         )
@@ -37,8 +40,8 @@ async function doTheThings() {
     productList.forEach(
         (product => {
             const taxApplied = calculateDiscount(product)
-            return taxApplied
-            //console.log(taxApplied, product.price + taxApplied)
+            //return taxApplied
+            console.log(taxApplied, product.price + taxApplied)
         }
         )
     )

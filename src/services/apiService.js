@@ -45,7 +45,7 @@ function fetchProductData() {
             switch (_a.label) {
                 case 0:
                     _a.trys.push([0, 3, , 4]);
-                    return [4 /*yield*/, fetch('https://frzdummyjson.com/products?limit=25&select=id,title,category,price,discountPercentage')];
+                    return [4 /*yield*/, fetch('https://dummyjson.com/products?limit=25&select=id,title,category,price,discountPercentage')];
                 case 1:
                     response = _a.sent();
                     if (!response.ok) {
@@ -60,7 +60,10 @@ function fetchProductData() {
                     return [2 /*return*/, productData.products];
                 case 3:
                     error_1 = _a.sent();
-                    throw error_1;
+                    if (error_1 instanceof errorHandler_1.NetworkError || error_1 instanceof errorHandler_1.DataError) {
+                        throw error_1;
+                    }
+                    throw new errorHandler_1.NetworkError(error_1 instanceof Error ? error_1.message : String(error_1));
                 case 4: return [2 /*return*/];
             }
         });

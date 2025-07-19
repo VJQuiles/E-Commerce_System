@@ -1,6 +1,6 @@
 import Product from '../models/Product'
 
-export function calculateDiscount(product: Product): number {
+export function calculateTax(product: Product): number {
     return product.price * product.tax
 }
 

@@ -1,14 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var Product = /** @class */ (function () {
-    function Product(id, title, category, price, discountPercentage, rating, stock, tax) {
+    function Product(id, title, category, price, discountPercentage, tax) {
         this.id = id;
         this.title = title;
         this.category = category;
         this.price = price;
         this.discountPercentage = discountPercentage;
-        this.rating = rating;
-        this.stock = stock;
         this.tax = tax;
         if (category === 'groceries') {
             this.tax = Product.gorceryTax;
@@ -18,7 +16,7 @@ var Product = /** @class */ (function () {
         }
     }
     Product.prototype.displayDetails = function () {
-        return "Title: ".concat(this.title, ", Price: $").concat(this.price, ", Rating: ").concat(this.rating, ", Stock: ").concat(this.stock);
+        return "Title: ".concat(this.title, ", Price: $").concat(this.price, ", Category: ").concat(this.category);
     };
     Product.prototype.getPriceWithDiscount = function () {
         return this.price - (this.price * (this.discountPercentage / 100));
